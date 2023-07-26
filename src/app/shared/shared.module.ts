@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxDatatableComponent } from './ngx-datatable/ngx-datatable.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
@@ -9,7 +10,9 @@ import { NgxDatatableComponent } from './ngx-datatable/ngx-datatable.component';
     NgxDatatableComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxDatatableModule,
+
   ]
 })
 export class SharedModule { }
