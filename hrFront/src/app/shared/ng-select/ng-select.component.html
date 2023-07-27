@@ -1,0 +1,21 @@
+<label for="" *ngIf="label">{{label}} <span class="required" *ngIf="required">*</span></label>
+
+
+<ng-select
+[items]="items"
+bindLabel="name"
+bindValue="id"
+(search)="onSearch($event.term)"
+(scrollToEnd)="scrollEnding()"
+(open)="openSelect()"
+[loading]="loading"
+(change)="Change($event)"
+[formControl]="control">
+(clear)="onClear($event)"
+</ng-select>
+
+
+
+<ng-container *ngIf="control.errors?.['required']&& control.touched">
+ <span class="required">This Field is required</span>
+</ng-container>
