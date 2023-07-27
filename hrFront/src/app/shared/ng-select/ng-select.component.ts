@@ -18,7 +18,9 @@ export class NgSelectComponent implements OnInit {
   itemId! :number
   @Input() url!: string;
   @Input() urlId!: string;
-  @Input() control!: FormControl;
+   @Input() control!: FormControl;
+  // @Input() control!: AbstractControl;
+
   @Input('update$') update$ = new Subject<any>();
   @Input() queryParams = ''
 
