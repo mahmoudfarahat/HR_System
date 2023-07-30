@@ -1,39 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.api\\hrBack.api.csproj": {}
+    "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.api\\hrBack.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.api\\hrBack.api.csproj": {
+    "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.api\\hrBack.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.api\\hrBack.api.csproj",
+        "projectUniqueName": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.api\\hrBack.api.csproj",
         "projectName": "hrBack.api",
-        "projectPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.api\\hrBack.api.csproj",
-        "packagesPath": "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.api\\obj\\",
+        "projectPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.api\\hrBack.api.csproj",
+        "packagesPath": "C:\\Users\\Mahmoud\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mahmoud.farahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.EF\\hrBack.EF.csproj": {
-                "projectPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.EF\\hrBack.EF.csproj"
+              "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj": {
+                "projectPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj"
               }
             }
           }
@@ -78,25 +81,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.core\\hrBack.core.csproj": {
+    "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.core\\hrBack.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.core\\hrBack.core.csproj",
+        "projectUniqueName": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.core\\hrBack.core.csproj",
         "projectName": "hrBack.core",
-        "projectPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.core\\hrBack.core.csproj",
-        "packagesPath": "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.core\\obj\\",
+        "projectPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.core\\hrBack.core.csproj",
+        "packagesPath": "C:\\Users\\Mahmoud\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mahmoud.farahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -136,25 +143,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.EF\\hrBack.EF.csproj": {
+    "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.EF\\hrBack.EF.csproj",
+        "projectUniqueName": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj",
         "projectName": "hrBack.EF",
-        "projectPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.EF\\hrBack.EF.csproj",
-        "packagesPath": "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.EF\\obj\\",
+        "projectPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj",
+        "packagesPath": "C:\\Users\\Mahmoud\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mahmoud.farahat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -167,8 +178,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.core\\hrBack.core.csproj": {
-                "projectPath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\hrBack\\hrBack.core\\hrBack.core.csproj"
+              "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.core\\hrBack.core.csproj": {
+                "projectPath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.core\\hrBack.core.csproj"
               }
             }
           }
@@ -214,7 +225,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

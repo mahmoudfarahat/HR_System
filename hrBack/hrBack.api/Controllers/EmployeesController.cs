@@ -16,9 +16,9 @@ namespace hrBack.api.Controllers
         }
 
         [HttpGet]
-        public  IActionResult Get()
+        public  IActionResult Get(int start = 0 , int length = 10)
         {
-            return Ok(_unit.Employees.GetAll());
+            return Ok(_unit.Employees.GetAll(start, length));
         }
     }
 }
