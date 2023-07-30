@@ -1,0 +1,17 @@
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\bin\Debug\net6.0\hrBack.EF.deps.json
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\bin\Debug\net6.0\hrBack.EF.runtimeconfig.json
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\bin\Debug\net6.0\hrBack.EF.dll
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\bin\Debug\net6.0\hrBack.EF.pdb
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\bin\Debug\net6.0\hrBack.core.dll
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\bin\Debug\net6.0\hrBack.core.pdb
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.csproj.AssemblyReference.cache
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.AssemblyInfoInputs.cache
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.AssemblyInfo.cs
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.csproj.CoreCompileInputs.cache
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.csproj.CopyComplete
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.dll
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\refint\hrBack.EF.dll
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.pdb
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\hrBack.EF.genruntimeconfig.cache
+C:\Users\mahmoud.farahat\Desktop\system\hrBack\hrBack.EF\obj\Debug\net6.0\ref\hrBack.EF.dll

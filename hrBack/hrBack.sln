@@ -5,6 +5,10 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hrBack.api", "hrBack.api\hrBack.api.csproj", "{A5F1CB0D-C663-44F5-B635-B976446CF9BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hrBack.EF", "hrBack.EF\hrBack.EF.csproj", "{80048F12-9F3F-4DAD-9E2A-2F52846EF291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hrBack.core", "hrBack.core\hrBack.core.csproj", "{B688956A-22C5-4FC0-82C8-FA214154375C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A5F1CB0D-C663-44F5-B635-B976446CF9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F1CB0D-C663-44F5-B635-B976446CF9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F1CB0D-C663-44F5-B635-B976446CF9BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80048F12-9F3F-4DAD-9E2A-2F52846EF291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80048F12-9F3F-4DAD-9E2A-2F52846EF291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80048F12-9F3F-4DAD-9E2A-2F52846EF291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80048F12-9F3F-4DAD-9E2A-2F52846EF291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B688956A-22C5-4FC0-82C8-FA214154375C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B688956A-22C5-4FC0-82C8-FA214154375C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B688956A-22C5-4FC0-82C8-FA214154375C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B688956A-22C5-4FC0-82C8-FA214154375C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

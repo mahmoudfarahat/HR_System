@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\hrBack.api.props" />
+</Project>
