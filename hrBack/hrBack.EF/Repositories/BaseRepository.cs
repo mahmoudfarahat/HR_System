@@ -1,5 +1,6 @@
 ﻿using hrBack.core.Dto;
 using hrBack.core.Interfaces;
+using hrBack.core.Specifications;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections;
@@ -20,9 +21,9 @@ namespace hrBack.EF.Repositories
             _context = context;
         }
 
-        public DataTableDto<TResult> GetAll<TResult>(int start, int lenght , Expression<Func<T, TResult>> select ,  ) where TResult : class
+        public DataTableDto<TResult> GetAll<TResult>(int start, int lenght , Expression<Func<T, bool>> Filter, Expression<Func<T, TResult>> select) where TResult : class
         {
-            var query = _context.Set<T>().Skip(start)
+            var query = _context.Set<T>().Where(Filter).Skip(start)
                  .Take(lenght).Select(select);
 
             var count = _context.Set<T>().Count();

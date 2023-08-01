@@ -1,4 +1,5 @@
 ﻿using hrBack.core;
+using hrBack.core.Specifications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +17,15 @@ namespace hrBack.api.Controllers
         }
 
         [HttpGet]
-        public  IActionResult Get(int start = 0 , int length = 10)
+        public  IActionResult Get(string? search ,int start = 0 , int length = 10)
         {
+            if(search == null)
+            {
+                search = "";
+            }
             return Ok(_unit.Employees.GetAll(start, length,
+                  (new EmployeeFilter(search)).GetExpression()
+                ,
                 a=> new {
                     id = a.Id,
                     code = a.EmployeeCode,
