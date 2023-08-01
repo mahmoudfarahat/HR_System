@@ -20,15 +20,15 @@ namespace hrBack.EF.Repositories
             _context = context;
         }
 
-        public DataTableDto<T> GetAll(int start, int lenght)
+        public DataTableDto<TResult> GetAll<TResult>(int start, int lenght , Expression<Func<T, TResult>> select ,  ) where TResult : class
         {
             var query = _context.Set<T>().Skip(start)
-                 .Take(lenght);
+                 .Take(lenght).Select(select);
 
             var count = _context.Set<T>().Count();
 
 
-            return  new DataTableDto<T>
+            return  new DataTableDto<TResult>
             {
                 data =   query.ToList(),
                 recordsFiltered = count,

@@ -10,6 +10,6 @@ namespace hrBack.core.Interfaces
 {
     public interface IBaseRepository<T> where T : class
     {
-        DataTableDto<T> GetAll(int start, int lenght);
+        DataTableDto<TResult> GetAll<TResult>(int start, int lenght , Expression<Func<T, TResult>> select , Expression<Func<T, bool>> Filter) where TResult : class;
     }
 }

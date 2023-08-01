@@ -1,64 +1,71 @@
-
-
-
 <div class="d-flex">
-  <input type="text"  class="form-control" placeholder="Press Enter to Search" #searchTable  (keyup.enter)="search(searchTable)"  />
-  <button class="btn btn-success"   (click)="search(searchTable)"  >
-  Search
-     </button>
-  </div>
-  <hr/>
-
-  <ngx-datatable
-  class="bootstrap  sortable"
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Press Enter to Search"
+    #searchTable
+    (keyup.enter)="search(searchTable)"
+  />
+  <button class="btn btn-success" (click)="search(searchTable)">Search</button>
+</div>
+<hr />
+<div class="selected-column">
+  <h4>Available Columns</h4>
+  <ul>
+    <li *ngFor="let col of toggledColumns">
+      <input
+        type="checkbox"
+        [id]="col.Name"
+        (click)="toggle(col)"
+        [checked]="isChecked(col)"
+      />
+      <label [attr.for]="col.name">{{ col.name }}</label>
+    </li>
+  </ul>
+</div>
+<ngx-datatable
+  class="bootstrap sortable"
   [count]="page.count"
   [loadingIndicator]="isLoading"
   [columnMode]="columnMode"
   [footerHeight]="50"
   [limit]="10"
-
   (page)="ClickPage($event)"
   [rows]="rows"
   [sortType]="sortType"
-  [limit]="page.limit" [externalPaging]="true"
+  [limit]="page.limit"
+  [externalPaging]="true"
   [offset]="page.offset"
   rowHeight="auto"
-
   (sort)="sortData($event)"
   [scrollbarH]="true"
-
+>
+  <ngx-datatable-column
+    *ngFor="let item of filteredColumn"
+    [name]="item.name"
+    [resizeable]="true"
+    [sortable]="true"
   >
-  <ngx-datatable-column  *ngFor="let item of filteredColumn"
-  [name]="item.name"
-  [resizeable]="true"
-  [sortable]="true" >
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <ng-container *ngIf="item.type == 'function'">
+        <button
+          class="btn"
+          style="cursor: pointer; text-decoration: underline"
+          (click)="item.clickFunction(row[dataId])"
+        >
+          {{ row[item.key] }}
+        </button>
+      </ng-container>
 
- <ng-template  let-row="row" ngx-datatable-cell-template>
+      <ng-container *ngIf="item.type == 'string'">
+        {{ row[item.key] }}
+      </ng-container>
 
-  <ng-container  *ngIf="item.type == 'function'"  >
-    <button class="btn " style="  cursor: pointer ; text-decoration: underline;
-
-    " (click)="item.clickFunction(row[dataId])" >
-    {{ row[item.key]}}
-  </button>
- </ng-container>
-
-     <ng-container *ngIf="item.type == 'string'">
-           {{ row[item.key]}}
-     </ng-container>
-
-     <ng-container *ngIf="item.type == 'action'">
-      <a class="  deleteIcon"  (click)="item.clickFunction(row[dataId])" >
-        <i class="material-icons">&#xE872;</i>
-    </a>
-
-</ng-container>
-
-  </ng-template>
-</ngx-datatable-column>
-
-
+      <ng-container *ngIf="item.type == 'action'">
+        <a class="deleteIcon" (click)="item.clickFunction(row[dataId])">
+          <i class="material-icons">&#xE872;</i>
+        </a>
+      </ng-container>
+    </ng-template>
+  </ngx-datatable-column>
 </ngx-datatable>
-
-
-

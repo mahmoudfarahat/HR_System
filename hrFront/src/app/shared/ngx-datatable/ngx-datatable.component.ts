@@ -3,6 +3,8 @@ import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } fr
 import { ColumnMode, DatatableComponent, SelectionType, SortType } from '@swimlane/ngx-datatable';
 import { environment } from 'src/environments/environment';
 
+
+
 @Component({
   selector: 'app-ngx-datatable',
   templateUrl: './ngx-datatable.component.html',
@@ -14,10 +16,12 @@ export class NgxDatatableComponent implements OnInit {
   @ViewChild('tableContainer', { static: false }) tableContainer!: ElementRef;
 
 @Input() data:any
-@Input() columns!: {}[ ]
+@Input() columns!: any[ ]
 @Input() apiType!:string
 @Input()dataId :any
 refreshTrigger: boolean = false;
+
+toggledColumns:any
 
 @Input() apiUrl  = environment.BASE_URL
 
@@ -29,10 +33,13 @@ refreshTrigger: boolean = false;
   ngOnInit(): void {
 
     this.getData()
+
+    console.log(this.columns)
+    this.toggledColumns = this.columns
   }
 
   ngOnChanges(changes: any): void {
-    //i want to try to use changes without
+ 
 console.log(changes.data.currentValue)
 if(changes.data.currentValue.data){
   this.page.count = changes.data.currentValue.recordsFiltered ;
@@ -42,17 +49,6 @@ if(changes.data.currentValue.data){
      this.rows.push(iterator);
   }
 }
-
-
-  //    this.url = new URL(`${environment.BASE_URL}${this.apiType}`)
-  //   this.http.get<any>(this.url.href).subscribe(a=>{
-  //     this.page.count = a.recordsFiltered;
-  //     this.page.loadingIndicator = false;
-  //     this.rows = [];
-  //     for (const iterator of a.data) {
-  //        this.rows.push(iterator);
-  //     }
-  //  });
   }
 
 
@@ -122,7 +118,7 @@ console.log(this.data)
       }
    });
   }
-
+//sorting
   sortData(data:any){
     this.page.propety = data.sorts[0].prop;
     this.page.assending = data.sorts[0].dir == 'asc' ? true :false
@@ -140,6 +136,25 @@ console.log(this.data)
     });
    }
 
+//Available Columns
+   toggle(col:any) {
+    const isChecked = this.isChecked(col);
 
+    if (isChecked) {
+      this.columns = this.columns.filter(c => {
+        return c.name !== col.name;
+      });
+    } else {
+      this.columns = [...this.columns, col];
+    }
+  }
+
+  isChecked(col:any) {
+    return (
+      this.columns.find(c => {
+        return c.name === col.name;
+      }) !== undefined
+    );
+  }
 
 }

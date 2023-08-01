@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace hrBack.core.Dto
 {
-    public class DataTableDto<T>
+    public class DataTableDto<T> where T : class
     {
          
         public IEnumerable<T> data { get; set; }

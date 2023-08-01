@@ -26,7 +26,7 @@ export class EmployeeListComponent implements OnInit {
     {
       name:"Code",
       sortable: false,
-      key:"employeeCode",
+      key:"code",
       type:"function",
       checked:true,
       hasFunction:false,
