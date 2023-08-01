@@ -10,10 +10,19 @@ namespace hrBack.core.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public string SNN { get; set; }
         public string EmployeeCode { get; set; }
 
         public string Email { get; set; }
 
+        public DateTime HireDate { get; set; }
+
+        public string HomePhone { get; set; }
+
+        public string MobilePhone { get; set; }
+
+        public string OfficePhone { get; set; }
 
 
     }

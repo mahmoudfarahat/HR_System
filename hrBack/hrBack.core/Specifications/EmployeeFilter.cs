@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace hrBack.core.Specifications
 {
-    public class EmployeeFilter : MainFilter<Employee>
+    public class EmployeeFilter : MainFilter<Employee> 
     {
         private readonly string _search;
 
@@ -23,3 +23,4 @@ namespace hrBack.core.Specifications
         }
     }
 }
+ 

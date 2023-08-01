@@ -18,6 +18,8 @@ export class EmployeeListComponent implements OnInit {
   getEmployees(){
     this.employeeService.getEmployees().subscribe((employees)=>{
       this.employees = employees
+
+
     })
   }
 
@@ -57,6 +59,24 @@ export class EmployeeListComponent implements OnInit {
       name:"Email",
       sortable: false,
       key:"email",
+      type:"string",
+      checked:true,
+      hasFunction:false,
+
+    },
+    {
+      name:"Hire Date",
+      sortable: false,
+      key:"hireDate",
+      type:"date",
+      checked:true,
+      hasFunction:false,
+
+    },
+    {
+      name:"Mobile Phone",
+      sortable: false,
+      key:"mobilePhone",
       type:"string",
       checked:true,
       hasFunction:false,

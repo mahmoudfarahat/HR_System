@@ -61,10 +61,14 @@
         {{ row[item.key] }}
       </ng-container>
 
+      <ng-container *ngIf="item.type == 'date'">
+        {{ row[item.key] | date: 'dd/MM/yyyy' }}
+      </ng-container>
+
       <ng-container *ngIf="item.type == 'action'">
         <a class="deleteIcon" (click)="item.clickFunction(row[dataId])">
-          <i class="material-icons">&#xE872;</i>
-        </a>
+          <i class="bi bi-trash " style="font-size: 20px;"></i>
+             </a>
       </ng-container>
     </ng-template>
   </ngx-datatable-column>

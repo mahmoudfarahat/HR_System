@@ -31,8 +31,19 @@ namespace hrBack.api.Controllers
                     code = a.EmployeeCode,
                     name = a.Name,
                     email = a.Email,
+                    HireDate= a.HireDate,
+                    HomePhone = a.HomePhone,
+                    MobilePhone  =a.MobilePhone,
+                    OfficePhone = a.OfficePhone
 
-            }));
+
+
+
+
+
+ 
+
+    }));
         }
     }
 }
