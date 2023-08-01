@@ -17,20 +17,27 @@ namespace hrBack.api.Controllers
         }
 
         [HttpGet]
-        public  IActionResult Get(string? search ,int start = 0 , int length = 10)
+        public  IActionResult Get(string? search ,string? special, int start = 0 , int length = 10)
         {
             if(search == null)
             {
                 search = "";
             }
+            if (special == null)
+            {
+                special = "";
+            }
             return Ok(_unit.Employees.GetAll(start, length,
-                  (new EmployeeFilter(search)).GetExpression()
+
+                  (new EmployeeFilter()).FilterAll(search)
                 ,
-                a=> new {
-                    id = a.Id,
-                    code = a.EmployeeCode,
-                    name = a.Name,
-                    email = a.Email,
+                    (new EmployeeFilter()).SpecialFilter(special),
+                a => new {
+                    Id = a.Id,
+                    Code = a.EmployeeCode,
+                    SNN = a.SNN,
+                    Name = a.Name,
+                    Email = a.Email,
                     HireDate= a.HireDate,
                     HomePhone = a.HomePhone,
                     MobilePhone  =a.MobilePhone,

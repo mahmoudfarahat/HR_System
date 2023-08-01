@@ -46,6 +46,8 @@
     [resizeable]="true"
     [sortable]="true"
   >
+
+
     <ng-template let-row="row" ngx-datatable-cell-template>
       <ng-container *ngIf="item.type == 'function'">
         <button

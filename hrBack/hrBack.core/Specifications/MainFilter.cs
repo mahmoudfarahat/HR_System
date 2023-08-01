@@ -10,10 +10,10 @@ namespace hrBack.core.Specifications
     public abstract class MainFilter<T>
     {
 
-        public abstract Expression<Func<T, bool>> GetExpression();
+        public abstract Expression<Func<T, bool>> FilterAll(string search);
 
 
-
+        public abstract Expression<Func<T, bool>> SpecialFilter(string special);
 
     }
 }

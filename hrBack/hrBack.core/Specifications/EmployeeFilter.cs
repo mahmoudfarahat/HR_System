@@ -2,24 +2,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace hrBack.core.Specifications
 {
-    public class EmployeeFilter : MainFilter<Employee> 
+    public class EmployeeFilter : MainFilter<Employee>
     {
-        private readonly string _search;
+   
 
-        public EmployeeFilter(string search)
+        public override Expression<Func<Employee, bool>> FilterAll(string search)
         {
-            _search = search;
+            return a => a.Name.Contains(search) || a.EmployeeCode.Contains(search);
         }
 
-        public override Expression<Func<Employee, bool>> GetExpression()
+        public override Expression<Func<Employee, bool>> SpecialFilter(string special)
         {
-            return a => a.Name.Contains(_search) || a.EmployeeCode.Contains(_search);
+             var parameter = Expression.Parameter(typeof(Employee), "a");
+
+             var expression = DynamicExpressionParser.ParseLambda(new[] { parameter },  null, special);
+
+             return (Expression<Func<Employee, bool>>)expression;
         }
     }
 }

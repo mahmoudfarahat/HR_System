@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bCfTgJduziPbF6xAO/e920tFOc2532nLSwdUv6u/W0/tvCOUhjJ3X4F5OqTVih+Y8P4Wkl9+7NmExMwc2UmdJA==",
+  "dgSpecHash": "tHyyaciG9gYS7QOikuTHXDz5M0VudH8uOdSn7zhuCUclcEVT0mWVRz89kBi96cTW6Ae1dXEQndfsyGCHZbHYMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\HR_System\\hrBack\\hrBack.core\\hrBack.core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.linq.dynamic.core\\1.3.3\\system.linq.dynamic.core.1.3.3.nupkg.sha512"
+  ],
   "logs": []
 }

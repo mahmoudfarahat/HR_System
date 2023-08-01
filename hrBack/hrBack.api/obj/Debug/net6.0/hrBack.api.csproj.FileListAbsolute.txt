@@ -205,3 +205,4 @@ C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.api\obj\Debug\ne
 C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.api\obj\Debug\net6.0\hrBack.api.csproj.CopyComplete
 C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.api\obj\Debug\net6.0\hrBack.api.genruntimeconfig.cache
 C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.api\obj\Debug\net6.0\ref\hrBack.api.dll
+C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.api\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll

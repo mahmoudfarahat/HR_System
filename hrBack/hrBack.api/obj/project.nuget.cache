@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vPEM9KebgMoIr1OXAPpD/6qC8LZH9UxFB6G3PPbviqn0GEr9MKOC3iwQDAjOswxVR2nSEutCOPBtej0O8iLA6w==",
+  "dgSpecHash": "lEo8EQHuiBDOvjIJ2qcTAzX5XKad7bBxLxtptxbiI0CE389epWUJ/ZBlpGe2AkjdtBVPfzejxfvD0tfaHSNZFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mahmoud.farahat\\Desktop\\system\\HR_System\\hrBack\\hrBack.api\\hrBack.api.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.linq.dynamic.core\\1.3.3\\system.linq.dynamic.core.1.3.3.nupkg.sha512",
     "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
     "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\mahmoud.farahat\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
