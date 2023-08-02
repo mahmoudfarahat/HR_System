@@ -9,22 +9,114 @@ import Swal from 'sweetalert2';
 })
 export class EmployeeListComponent implements OnInit {
   employees:any
+  conditions:any[]= []
+  linkQuery:any
+
+  conditionStrings :string[]= [];
+
+ items:any
+
+
+ options = ['Contains', 'equal', 'is Null' , 'Not Null']
+
+ apply(){
+
+ }
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.getEmployees()
+
+
+
   }
 
+  addCondition(){
+    this.conditions.push(1)
+  }
+
+  selectedItems :string[] = [];
+  selectedOptions : string[] = [];
+  search: string[] = [];
+
+  addNewCondition(){
+
+  }
+  
+ and(){
+  for(let i = 0; i < this.conditions.length; i++) {
+    // access ngModel values
+    const item = this.selectedItems[i];
+    const option = this.selectedOptions[i];
+
+    // construct string
+    if(option == "Contains")
+    {
+      this.conditionStrings[i] = `a.${item}.Contains("${this.search[i]}")`;
+
+    }
+    if(option == "equal")
+    {
+      this.conditionStrings[i] = `a.${item} == "${this.search[i]}"`;
+
+    }
+    if(option == 'is Null')
+    {
+      this.conditionStrings[i] = `a.${item} == "" `;
+
+    }
+    if(option == 'Not Null')
+    {
+      this.conditionStrings[i] = `a.${item} != "" `;
+
+    }
+
+
+
+  }
+
+   let condition =  this.conditionStrings.join(' && ')
+
+console.log(condition);
+ }
+
+  or(){
+    for(let i = 0; i < this.conditions.length; i++) {
+      // access ngModel values
+      const item = this.selectedItems[i];
+      const option = this.selectedOptions[i];
+
+      // construct string
+      if(option == "Contains")
+      {
+        this.conditionStrings[i] = `a.${item}.Contains("${this.search[i]}")`;
+
+      }
+      if(option == "equal")
+      {
+        this.conditionStrings[i] = `a.${item} == "${this.search[i]}"`;
+
+      }
+
+    }
+
+     let condition =  this.conditionStrings.join(' || ')
+
+console.log(condition);
+  }
+
+
   getEmployees(){
-    this.employeeService.getEmployees().subscribe((employees)=>{
+    this.employeeService.getEmployees().subscribe((employees:any)=>{
       this.employees = employees
 
+      this.items= Object.keys(employees.data[0])
 
     })
   }
 
 
-  columns:{}[]= [
+   columns:{}[]= [
     {
       name:"Code",
       sortable: false,

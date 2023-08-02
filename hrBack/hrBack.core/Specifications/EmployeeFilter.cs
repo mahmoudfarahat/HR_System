@@ -15,16 +15,21 @@ namespace hrBack.core.Specifications
 
         public override Expression<Func<Employee, bool>> FilterAll(string search)
         {
+         
             return a => a.Name.Contains(search) || a.EmployeeCode.Contains(search);
         }
 
         public override Expression<Func<Employee, bool>> SpecialFilter(string special)
         {
-             var parameter = Expression.Parameter(typeof(Employee), "a");
+            if( special != ""  )
+            {
+                var parameter = Expression.Parameter(typeof(Employee), "a");
 
-             var expression = DynamicExpressionParser.ParseLambda(new[] { parameter },  null, special);
+                var expression = DynamicExpressionParser.ParseLambda(new[] { parameter }, null, special);
 
-             return (Expression<Func<Employee, bool>>)expression;
+                return (Expression<Func<Employee, bool>>)expression;
+            }
+            return null;
         }
     }
 }

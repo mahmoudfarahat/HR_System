@@ -21,10 +21,13 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     FormsModule,
     NgSelectModule,
     ReactiveFormsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+
   ],
   exports:[
-    NgxDatatableComponent
+    NgxDatatableComponent,
+    NgSelectModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

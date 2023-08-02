@@ -21,18 +21,28 @@ namespace hrBack.EF.Repositories
             _context = context;
         }
 
-        public DataTableDto<TResult> GetAll<TResult>(int start, int lenght , Expression<Func<T, bool>> special, Expression<Func<T, bool>> Filter, Expression<Func<T, TResult>> select) where TResult : class
+        public DataTableDto<TResult> GetAll<TResult>(int start, int length, Expression<Func<T, bool>> Filter, Expression<Func<T, bool>> special, Expression<Func<T, TResult>> select) where TResult : class
         {
 
-            var query = _context.Set<T>().Where(Filter).Where(special).Skip(start)
-                 .Take(lenght).Select(select);
+
+            var query = _context.Set<T>().Where(Filter);
+
+            if(special != null)
+            {
+                query = query.Where(special);
+            }
+
+            query = query.Skip(start)
+                 .Take(length);
+
+
 
             var count = _context.Set<T>().Count();
 
 
             return  new DataTableDto<TResult>
             {
-                data =   query.ToList(),
+                data =   query.Select(select).ToList(),
                 recordsFiltered = count,
                 recordsTotal = count
             };
