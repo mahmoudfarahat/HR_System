@@ -34,3 +34,15 @@ C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.core\obj\Debug\n
 C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\refint\hrBack.core.dll
 C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.pdb
 C:\Users\mahmoud.farahat\Desktop\system\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\ref\hrBack.core.dll
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\bin\Debug\net6.0\hrBack.core.deps.json
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\bin\Debug\net6.0\hrBack.core.dll
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\bin\Debug\net6.0\hrBack.core.pdb
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.csproj.AssemblyReference.cache
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.AssemblyInfoInputs.cache
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.AssemblyInfo.cs
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.csproj.CoreCompileInputs.cache
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.dll
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\refint\hrBack.core.dll
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\hrBack.core.pdb
+C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.core\obj\Debug\net6.0\ref\hrBack.core.dll

@@ -1,73 +1,67 @@
 <div class="container">
-  <br>
-  <br>
+  <br />
+  <br />
 
-  <button class="btn btn-success" (click)="and()" >And</button>
-  <button  class="btn btn-success" (click)="or()" >Or</button>
-  <button  class="btn btn-success" (click)="addCondition()">+</button>
-  <button  class="btn btn-success" (click)="addNewCondition()">++</button>
 
-  <button class="btn btn-primary" (click)="apply()">Apply</button>
+  <div *ngFor="let row of rows let j = index">
+    <button (click)="addNew(j)">Add</button>
+    <button (click)="addInput(row)">Add inside</button>
+
+    <div *ngFor="let insiderow of row.insiderows; let i = index">
+      <input type="text" [(ngModel)]="insiderow.search" />
+    </div>
+  </div>
+
+
+{{rows | json}}
+
+
+
+  <!-- <button class="btn btn-success" (click)="and()">And</button>
+  <button class="btn btn-success" (click)="or()">Or</button>
+  <button class="btn btn-success" (click)="addCondition()">+</button>
+  <button class="btn btn-success" (click)="addNewCondition()">++</button>
+
+
 
   <div *ngFor="let condition of conditions; let i = index">
     <div class="d-flex">
       <ng-select
-       style="width: 200px;"
-      [items]="items"
-      bindLabel="name"
-      bindValue="id"
-      [(ngModel)]="selectedItems[i]"
-      ></ng-select>
+        style="width: 200px"
+        [items]="items"
+        bindLabel="name"
+        bindValue="id"
+        [(ngModel)]="selectedItems[i]"
+      >
+      </ng-select>
       <ng-select
-      [items]="options"
-      bindLabel="name"
-      bindValue="id"
-      [(ngModel)]="selectedOptions[i]"
-
-      style="width: 200px;"
-
+        [items]="options"
+        bindLabel="name"
+        bindValue="id"
+        [(ngModel)]="selectedOptions[i]"
+        style="width: 200px"
       ></ng-select>
-  <input type="text" [(ngModel)]="search[i]">
-    </div>
-    <div  *ngIf="selectedOptions[i] =='contains'">
-
-      a =>a.{{selectedItems[i]}}.{{selectedOptions[i]}}("{{search[i]}}")
-
-    </div>
-    <div  *ngIf="selectedOptions[i] =='equal'">
-
-      a =>a.{{selectedItems[i]}}.{{selectedOptions[i]}}("{{search[i]}}")
-
+      <input type="text" [(ngModel)]="search[i]" />
     </div>
 
+  </div> -->
 
-  </div>
+
 
   <br>
-  <br>
-
-  <div *ngFor="let condition of conditions; let i = index">
-
-    <!-- existing code -->
-
-    <div>{{conditionStrings[i]}}</div>
-
-  </div>
-
 <br>
-<br>
-<br>
-<br>
+  <!-- <button class="btn btn-primary" (click)="apply()">Apply</button> -->
 
+  <br />
+  <br />
+  <br />
+  <br />
 
-
-
-  <app-ngx-datatable *ngIf="employees"
-
-  [data]="employees"
-  [columns]="columns"
-  apiType = "api/employees"
+  <app-ngx-datatable
+    *ngIf="employees"
+    [data]="employees"
+    [columns]="columns"
+    apiType="api/employees"
   >
-</app-ngx-datatable>
-
+  </app-ngx-datatable>
 </div>

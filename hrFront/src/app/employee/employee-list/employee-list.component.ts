@@ -2,26 +2,93 @@ import { EmployeeService } from './../../services/employee/employee.service';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 
+class Row {
+  id! :number
+  row?:Row[]
+  insiderows?:Insiderows[]
+}
+
+class Insiderows{
+  search! :String
+  insiderows?:Insiderows[]
+}
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
+  lastAssignedId: number = 0;
+  rows: Row[] = [this.createRowWithInput()]; // Initialize with a Row with an input
+
+  createRowWithInput(): Row {
+    const newRow = new Row();
+    newRow.id = ++this.lastAssignedId;
+    newRow.row = []
+    newRow.insiderows = [this.createInsiderowsWithInput()]; // Add an Insiderows object with an input
+    return newRow;
+  }
+
+  createInsiderowsWithInput(): Insiderows {
+    const newInsiderow = new Insiderows();
+    newInsiderow.search = ""; // Initialize the search input with an empty string
+    return newInsiderow;
+  }
+
+  addNew(j : any) {
+    console.log(j)
+    // console.log(this.rows[j]['row']?.push(this.createRowWithInput()))
+    this.rows.push(this.createRowWithInput()); // Add a new Row with an input
+  }
+
+  addInput(row: Row) {
+    if (!row.insiderows) {
+      row.insiderows = [this.createInsiderowsWithInput()];
+    } else {
+      row.insiderows.push(this.createInsiderowsWithInput());
+    }
+  }
+/*
+
+rows = [
+  {
+insiderows:[{
+
+}]
+}
+]
+
+
+*/
+
+
+
+
+
+
+
+
+  /////////////////////////////////////
   employees:any
-  conditions:any[]= []
-  linkQuery:any
+  //   conditions:any[]= [{}]
 
-  conditionStrings :string[]= [];
-
- items:any
+  //  selectedItems :string[] = [];
+  //  selectedOptions : string[] = [];
+  // search: string[] = [];
+  //   conditionStrings :string[]= [];
+   items:any
 
 
  options = ['Contains', 'equal', 'is Null' , 'Not Null']
 
- apply(){
+   linkQuery= '( a=> a.Name == "Mahmoud" || a => a.Name == "Ali" ) || (  (a=> a.Name == "Mahmoud" || a => a.Name == "Ali" )  || (a=> a.Name == "Mahmoud" || a => a.Name == "Ali" ) )'
 
- }
+
+
+   apply(){
+
+  }
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
@@ -31,81 +98,86 @@ export class EmployeeListComponent implements OnInit {
 
   }
 
-  addCondition(){
-    this.conditions.push(1)
-  }
+  // addCondition(){
+  //   this.conditions.push({})
+  // }
 
-  selectedItems :string[] = [];
-  selectedOptions : string[] = [];
-  search: string[] = [];
+  // addNewCondition(){
 
-  addNewCondition(){
+  // }
 
-  }
-  
- and(){
-  for(let i = 0; i < this.conditions.length; i++) {
-    // access ngModel values
-    const item = this.selectedItems[i];
-    const option = this.selectedOptions[i];
+//  and(){
+//   for(let i = 0; i < this.conditions.length; i++) {
+//     // access ngModel values
+//     const item = this.selectedItems[i];
+//     const option = this.selectedOptions[i];
 
-    // construct string
-    if(option == "Contains")
-    {
-      this.conditionStrings[i] = `a.${item}.Contains("${this.search[i]}")`;
+//     // construct string
+//     if(option == "Contains")
+//     {
+//       this.conditionStrings[i] = `a.${item}.Contains("${this.search[i]}")`;
 
-    }
-    if(option == "equal")
-    {
-      this.conditionStrings[i] = `a.${item} == "${this.search[i]}"`;
+//     }
+//     if(option == "equal")
+//     {
+//       this.conditionStrings[i] = `a.${item} == "${this.search[i]}"`;
 
-    }
-    if(option == 'is Null')
-    {
-      this.conditionStrings[i] = `a.${item} == "" `;
+//     }
+//     if(option == 'is Null')
+//     {
+//       this.conditionStrings[i] = `a.${item} == "" `;
 
-    }
-    if(option == 'Not Null')
-    {
-      this.conditionStrings[i] = `a.${item} != "" `;
+//     }
+//     if(option == 'Not Null')
+//     {
+//       this.conditionStrings[i] = `a.${item} != "" `;
 
-    }
+//     }
 
 
 
-  }
+//   }
 
-   let condition =  this.conditionStrings.join(' && ')
+//    let condition =  this.conditionStrings.join(' && ')
 
-console.log(condition);
- }
+// console.log(condition);
+//  }
 
-  or(){
-    for(let i = 0; i < this.conditions.length; i++) {
-      // access ngModel values
-      const item = this.selectedItems[i];
-      const option = this.selectedOptions[i];
+//   or(){
+//     for(let i = 0; i < this.conditions.length; i++) {
+//       // access ngModel values
+//       const item = this.selectedItems[i];
+//       const option = this.selectedOptions[i];
 
-      // construct string
-      if(option == "Contains")
-      {
-        this.conditionStrings[i] = `a.${item}.Contains("${this.search[i]}")`;
+//       // construct string
+//       if(option == "Contains")
+//       {
+//         this.conditionStrings[i] = `a.${item}.Contains("${this.search[i]}")`;
 
-      }
-      if(option == "equal")
-      {
-        this.conditionStrings[i] = `a.${item} == "${this.search[i]}"`;
+//       }
+//       if(option == "equal")
+//       {
+//         this.conditionStrings[i] = `a.${item} == "${this.search[i]}"`;
 
-      }
+//       }
 
-    }
+//     }
 
-     let condition =  this.conditionStrings.join(' || ')
+//      let condition =  this.conditionStrings.join(' || ')
 
-console.log(condition);
-  }
+// console.log(condition);
+//   }
 
 
+
+
+
+
+
+
+
+
+  //////////////////////////////////////////////////////
   getEmployees(){
     this.employeeService.getEmployees().subscribe((employees:any)=>{
       this.employees = employees
@@ -217,4 +289,59 @@ console.log(condition);
     //   }
     // );
   }
+  //  bigConditions = [
+  //   {
+  //    order:1,
+  //    type:'or',
+  //    partentRows:[{
+  //     selectedItems:2,
+  //     selectedOptions:1,
+  //     search:2
+  //    },
+  //    {
+  //     selectedItems:2,
+  //     selectedOptions:1,
+  //     search:2
+  //    },
+  //   ],
+  //   childRows:[]
+  //   },
+  //   {
+  //     order:2,
+  //     type:'or',
+  //     rows:[{
+  //      selectedItems:2,
+  //      selectedOptions:1,
+  //      search:2
+  //     },
+  //     {
+  //      selectedItems:2,
+  //      selectedOptions:1,
+  //      search:2
+  //     },
+  //    ]
+  //    ,  childRows:[
+  //     {
+  //       order:2,
+  //       type:'or',
+  //       rows:[{
+  //        selectedItems:2,
+  //        selectedOptions:1,
+  //        search:2
+  //       },
+  //       {
+  //        selectedItems:2,
+  //        selectedOptions:1,
+  //        search:2
+  //       },
+  //      ]
+  //      ,childRows:[]
+  //     }
+  //    ]
+  //    }
+
+
+
+  // ]
+
 }
