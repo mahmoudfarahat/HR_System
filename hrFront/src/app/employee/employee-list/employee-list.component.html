@@ -2,30 +2,41 @@
   <br />
   <br />
 
-
   <button (click)="addNew()">Add</button>
-  <div *ngFor="let row of rows let j = index">
-    <button (click)="addChildNew(j)">Add</button>
-    <button (click)="addInput(row)">Add inside</button>
 
-    <div *ngFor="let insiderow of row.insiderows; let i = index">
-      <input type="text" [(ngModel)]="insiderow.search" />
-    </div>
-
-    <div *ngFor="let childRow of row.row let o = index">
-      <button (click)="addChildNew(j)">Add</button>
+  <ng-container *ngFor="let row of rows; let j = index">
+    <div class="parent">
+      {{ j }}
+      <button (click)="addChildNew(row)">Add</button>
       <button (click)="addInput(row)">Add inside</button>
 
-      <div *ngFor="let insiderow of childRow.insiderows; let y = index">
+      <div *ngFor="let insiderow of row.insiderows; let i = index">
+
         <input type="text" [(ngModel)]="insiderow.search" />
       </div>
 
+      <ng-container *ngTemplateOutlet="recursiveRow; context:{ $implicit: row.row, parentIndex:  j + '-' }">
+      </ng-container>
+    </div>
+  </ng-container>
 
+  <ng-template #recursiveRow let-rows let-parentIndex="parentIndex">
+    <div class="child">
+      <div *ngFor="let childRow of rows; let o = index">
+        {{ parentIndex }}{{ o }}
+        <button (click)="addChildNew(childRow)">Add</button>
+        <button (click)="addNestedInput(childRow)">Add inside</button>
 
+        <div *ngFor="let insiderow of childRow.insiderows; let y = index">
+          <input type="text" [(ngModel)]="insiderow.search" />
+        </div>
+
+        <ng-container *ngTemplateOutlet="recursiveRow; context:{ $implicit: childRow.row, parentIndex: parentIndex + o +'-'}">
+        </ng-container>
+      </div>
     </div>
 
-  </div>
-
+  </ng-template>
 
 {{rows | json}}
 

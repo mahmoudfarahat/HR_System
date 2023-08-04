@@ -25,7 +25,7 @@ export class EmployeeListComponent implements OnInit {
   createRowWithInput(): Row {
     const newRow = new Row();
     newRow.id = ++this.lastAssignedId;
-    newRow.row = []
+    newRow.row = [];
     newRow.insiderows = [this.createInsiderowsWithInput()]; // Add an Insiderows object with an input
     return newRow;
   }
@@ -36,21 +36,32 @@ export class EmployeeListComponent implements OnInit {
     return newInsiderow;
   }
 
-  addNew(j?: any) {
+  addNew(j?: number) {
     // console.log(j)
-
-//  this.rows[j]['row']?.push(this.createRowWithInput())
     this.rows.push(this.createRowWithInput()); // Add a new Row with an input
   }
-  addChildNew(j :any){
-    console.log(  this.rows[j]['row'])
-    this.rows[j]['row']?.push(this.createRowWithInput())
+
+  addChildNew(parentRow: Row) {
+    if (!parentRow.row) {
+      parentRow.row = [this.createRowWithInput()];
+    } else {
+      parentRow.row.push(this.createRowWithInput());
+    }
   }
+
   addInput(row: Row) {
     if (!row.insiderows) {
       row.insiderows = [this.createInsiderowsWithInput()];
     } else {
       row.insiderows.push(this.createInsiderowsWithInput());
+    }
+  }
+
+  addNestedInput(childRow: Row) {
+    if (!childRow.insiderows) {
+      childRow.insiderows = [this.createInsiderowsWithInput()];
+    } else {
+      childRow.insiderows.push(this.createInsiderowsWithInput());
     }
   }
 /*
