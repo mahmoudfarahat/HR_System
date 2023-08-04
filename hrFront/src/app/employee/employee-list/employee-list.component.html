@@ -3,13 +3,27 @@
   <br />
 
 
+  <button (click)="addNew()">Add</button>
   <div *ngFor="let row of rows let j = index">
-    <button (click)="addNew(j)">Add</button>
+    <button (click)="addChildNew(j)">Add</button>
     <button (click)="addInput(row)">Add inside</button>
 
     <div *ngFor="let insiderow of row.insiderows; let i = index">
       <input type="text" [(ngModel)]="insiderow.search" />
     </div>
+
+    <div *ngFor="let childRow of row.row let o = index">
+      <button (click)="addChildNew(j)">Add</button>
+      <button (click)="addInput(row)">Add inside</button>
+
+      <div *ngFor="let insiderow of childRow.insiderows; let y = index">
+        <input type="text" [(ngModel)]="insiderow.search" />
+      </div>
+
+
+
+    </div>
+
   </div>
 
 

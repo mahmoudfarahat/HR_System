@@ -36,12 +36,16 @@ export class EmployeeListComponent implements OnInit {
     return newInsiderow;
   }
 
-  addNew(j : any) {
-    console.log(j)
-    // console.log(this.rows[j]['row']?.push(this.createRowWithInput()))
+  addNew(j?: any) {
+    // console.log(j)
+
+//  this.rows[j]['row']?.push(this.createRowWithInput())
     this.rows.push(this.createRowWithInput()); // Add a new Row with an input
   }
-
+  addChildNew(j :any){
+    console.log(  this.rows[j]['row'])
+    this.rows[j]['row']?.push(this.createRowWithInput())
+  }
   addInput(row: Row) {
     if (!row.insiderows) {
       row.insiderows = [this.createInsiderowsWithInput()];
