@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M2ykneGSQgzxDmNR47dwm1koeFXQO4Ik6TWpGkwnxgmyu4WJhAWRCcDMQwPKGtLVh1HCwF5rmvrz8HEnD3ZL8g==",
+  "dgSpecHash": "+YtVAynxUXQNQmZ9BstXjrVjMpK6nhClO1Ns/oGtEF+J6XeLL61dj4moNYQcBHxj/YOXwLBXLoAASmYTBq73jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mahmoud\\Desktop\\New folder (2)\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj",
+  "projectFilePath": "C:\\Users\\Mahmoud\\Desktop\\HR_System\\hrBack\\hrBack.EF\\hrBack.EF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mahmoud\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Mahmoud\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

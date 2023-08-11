@@ -276,3 +276,4 @@ C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.api\obj\Debug\ne
 C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.api\obj\Debug\net6.0\hrBack.api.pdb
 C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.api\obj\Debug\net6.0\hrBack.api.genruntimeconfig.cache
 C:\Users\Mahmoud\Desktop\New folder (2)\HR_System\hrBack\hrBack.api\obj\Debug\net6.0\ref\hrBack.api.dll
+C:\Users\Mahmoud\Desktop\HR_System\hrBack\hrBack.api\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
