@@ -7,8 +7,20 @@ class Row {
   index?: number; // New property for storing index
 query:string = ''
 generateQuery(): void {
-  console.log(2)
+
   this.query = this.insiderows ? this.insiderows.map(innerRow => innerRow.getCombinedSearch()).join(' || ') : '';
+
+ let childquery =  this.row?.map(a => {
+   return a.query
+})
+console.log("("+this.query +")")
+console.log(childquery?.join(""))
+if(childquery?.join("")){
+  this.query =  "("+this.query +")" +"||" + "(" + childquery?.join("") + ")"
+
+}else{
+  this.query =  this.query
+}
 }
 }
 

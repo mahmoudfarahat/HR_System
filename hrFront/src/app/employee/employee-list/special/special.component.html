@@ -1,11 +1,12 @@
 <button (click)="addNew()">Add</button>
 
+
 <ng-container *ngFor="let row of rows; let j = index; trackBy: trackByIndex">
   <div class="parent">
     {{ row.index }}
     <button (click)="addChildNew(row)">Add</button>
     <button (click)="addInput(row)">Add inside Or</button>
-    <button (click)="addInput(row)">Add inside And</button>
+
 
     <div *ngFor="let insiderow of row.insiderows; let i = index; trackBy: trackByIndex">
       <input type="text" [(ngModel)]="insiderow.search" />
@@ -25,7 +26,7 @@
       {{ childRow.index }}
       <button (click)="addChildNew(childRow)">Add</button>
       <button (click)="addNestedInput(childRow)">Add inside Or</button>
-      <button (click)="addNestedInput(childRow)">Add inside And</button>
+
 
 
 
