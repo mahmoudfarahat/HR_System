@@ -19,6 +19,7 @@ class Insiderows{
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
+
   lastAssignedId: number = 0;
   rows: Row[] = [this.createRowWithInput()]; // Initialize with a Row with an input
 

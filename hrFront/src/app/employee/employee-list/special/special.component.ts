@@ -10,17 +10,16 @@ generateQuery(): void {
 
   this.query = this.insiderows ? this.insiderows.map(innerRow => innerRow.getCombinedSearch()).join(' || ') : '';
 
- let childquery =  this.row?.map(a => {
-   return a.query
-})
-console.log("("+this.query +")")
-console.log(childquery?.join(""))
-if(childquery?.join("")){
-  this.query =  "("+this.query +")" +"||" + "(" + childquery?.join("") + ")"
+  let samelevelChild = this.row?.map(a=> {
+    return "("+a.query +")"
+  }).join("||")
 
-}else{
-  this.query =  this.query
-}
+  console.log(samelevelChild)
+
+  if(samelevelChild){
+    this.query =   "("+this.query+")" +"||"+ "("  +samelevelChild+")"
+  }
+
 }
 }
 
@@ -46,9 +45,12 @@ class Insiderows {
 export class SpecialComponent implements OnInit {
   ngOnInit(): void {}
 
+
   lastAssignedId: number = 0;
 
   rows: Row[] = [this.createRowWithInput(1)]; // Initialize with a Row with an input, starting index from 1
+
+
 
   createRowWithInput(index: number): Row {
     const newRow = new Row();
