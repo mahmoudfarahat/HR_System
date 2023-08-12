@@ -5,3 +5,10 @@
 .child {
   margin-left: 20px; /* Adjust this value to control the gap between nested children and their parent */
 }
+
+
+button , input , ng-select{
+  margin-top: 5px;
+
+  margin-bottom: 5px;
+}

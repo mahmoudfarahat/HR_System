@@ -5,7 +5,7 @@ class Row {
   row?: Row[];
   insiderows?: Insiderows[];
   index?: number; // New property for storing index
-query:string = ''
+  query:string = ''
 generateQuery(): void {
 
   this.query = this.insiderows ? this.insiderows.map(innerRow => innerRow.getCombinedSearch()).join(' || ') : '';
@@ -14,7 +14,7 @@ generateQuery(): void {
     return "("+a.query +")"
   }).join("||")
 
-  console.log(samelevelChild)
+  // console.log(samelevelChild)
 
   if(samelevelChild){
     this.query =   "("+this.query+")" +"||"+ "("  +samelevelChild+")"
@@ -25,6 +25,8 @@ generateQuery(): void {
 
 class Insiderows {
   search!: string;
+  option!:any
+  item!:any
   insiderows?: Insiderows[];
   getCombinedSearch(): string {
     let combinedSearch = this.search;
@@ -99,4 +101,14 @@ export class SpecialComponent implements OnInit {
   trackByIndex(index: number, item: any) {
     return index;
   }
+  deleteRow(parent:any,child:any){
+    console.log(parent,child)
+    console.log(this.rows[parent].insiderows![child] )
+    this.rows[parent].insiderows?.splice(child,1)
+  }
+ 
+  /////////////////////////
+
+  options = ['Contains', 'equal', 'is Null' , 'Not Null']
+  selectedOption:any
 }
