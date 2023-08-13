@@ -1,4 +1,11 @@
-import { INavbarData } from './helper';
+
+export interface INavbarData{
+  routerLink:string;
+  label:string;
+  icon?:string;
+  expanded? :boolean;
+  items?: INavbarData[]
+}
 
 export const navbarData : INavbarData[] =[
   {

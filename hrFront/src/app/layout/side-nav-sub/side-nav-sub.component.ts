@@ -8,6 +8,19 @@ import { INavbarData } from '../side-nav/helper';
   templateUrl: './side-nav-sub.component.html',
   styleUrls: ['./side-nav-sub.component.scss'],
   animations:[
+    trigger('fadeInOut',[
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('700ms',
+        style({opactiy:1}))
+      ]),
+      transition(':leave',[
+        style({opacity:1}),
+        animate('100ms',
+        style({opacity:0})
+        )
+      ])
+    ]),
     trigger('submenu' , [
         state('hidden', style ({
           height:'0',

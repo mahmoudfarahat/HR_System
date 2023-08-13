@@ -41,6 +41,7 @@
       [routerLink]="[item.routerLink]"
       routerLinkActive="active-sublevel"
       [routerLinkActiveOptions]="{ exact: true }"
+      @fadeInOut
     >
       <i class="sublevel-link-icon fa fa-circle"></i>
       <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>
