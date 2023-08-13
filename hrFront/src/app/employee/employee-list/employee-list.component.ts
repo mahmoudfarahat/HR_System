@@ -46,7 +46,7 @@ insiderows:[{
    items:any
 
 
- 
+
 
    linkQuery= '( a=> a.Name == "Mahmoud" || a => a.Name == "Ali" ) || (  (a=> a.Name == "Mahmoud" || a => a.Name == "Ali" )  || (a=> a.Name == "Mahmoud" || a => a.Name == "Ali" ) )'
 
