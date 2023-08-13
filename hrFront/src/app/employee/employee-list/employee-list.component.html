@@ -3,84 +3,18 @@
   <br />
 
 
-<app-special></app-special>
+<!-- <app-special></app-special> -->
 
 
 
-  <button (click)="addNew()">Add</button>
-
-  <ng-container *ngFor="let row of rows; let j = index">
-    <div class="parent">
-      {{ j }}
-      <button (click)="addChildNew(row)">Add</button>
-      <button (click)="addInput(row)">Add inside</button>
-
-      <div *ngFor="let insiderow of row.insiderows; let i = index">
-
-        <input type="text" [(ngModel)]="insiderow.search" />
-      </div>
-
-      <ng-container *ngTemplateOutlet="recursiveRow; context:{ $implicit: row.row, parentIndex:  j + '-' }">
-      </ng-container>
-    </div>
-  </ng-container>
-
-  <ng-template #recursiveRow let-rows let-parentIndex="parentIndex">
-    <div class="child">
-      <div *ngFor="let childRow of rows; let o = index">
-        {{ parentIndex }}{{ o }}
-        <button (click)="addChildNew(childRow)">Add</button>
-        <button (click)="addNestedInput(childRow)">Add inside</button>
-
-        <div *ngFor="let insiderow of childRow.insiderows; let y = index">
-          <input type="text" [(ngModel)]="insiderow.search" />
-        </div>
-
-        <ng-container *ngTemplateOutlet="recursiveRow; context:{ $implicit: childRow.row, parentIndex: parentIndex + o +'-'}">
-        </ng-container>
-      </div>
-    </div>
-
-  </ng-template>
-
-{{rows | json}}
 
 
 
-  <!-- <button class="btn btn-success" (click)="and()">And</button>
-  <button class="btn btn-success" (click)="or()">Or</button>
-  <button class="btn btn-success" (click)="addCondition()">+</button>
-  <button class="btn btn-success" (click)="addNewCondition()">++</button>
-
-
-
-  <div *ngFor="let condition of conditions; let i = index">
-    <div class="d-flex">
-      <ng-select
-        style="width: 200px"
-        [items]="items"
-        bindLabel="name"
-        bindValue="id"
-        [(ngModel)]="selectedItems[i]"
-      >
-      </ng-select>
-      <ng-select
-        [items]="options"
-        bindLabel="name"
-        bindValue="id"
-        [(ngModel)]="selectedOptions[i]"
-        style="width: 200px"
-      ></ng-select>
-      <input type="text" [(ngModel)]="search[i]" />
-    </div>
-
-  </div> -->
 
 
 
   <br>
 <br>
-  <!-- <button class="btn btn-primary" (click)="apply()">Apply</button> -->
 
   <br />
   <br />

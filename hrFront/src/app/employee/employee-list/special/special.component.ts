@@ -1,33 +1,65 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 class Row {
-  id! :number
-  row?:Row[]
-  insiderows?:Insiderows[]
+  id!: number;
+  row?: Row[];
+  insiderows?: Insiderows[];
+  index?: number; // New property for storing index
+  query:string = ''
+generateQuery(): void {
+
+  this.query = this.insiderows ? this.insiderows.map(innerRow => innerRow.getCombinedSearch()).join(' || ') : '';
+
+  let samelevelChild = this.row?.map(a=> {
+    return "("+a.query +")"
+  }).join("||")
+
+  // console.log(samelevelChild)
+
+  if(samelevelChild){
+    this.query =   "("+this.query+")" +"||"+ "("  +samelevelChild+")"
+  }
+
+}
 }
 
-class Insiderows{
-  search! :String
-  insiderows?:Insiderows[]
+class Insiderows {
+  search!: string;
+  option!:any
+  item!:any
+  insiderows?: Insiderows[];
+  getCombinedSearch(): string {
+    let combinedSearch = this.search;
+    if (this.insiderows) {
+      combinedSearch += ' || ' + this.insiderows.map(innerRow => innerRow.getCombinedSearch()).join(' || ');
+    }
+    return combinedSearch;
+  }
+
 }
+
 @Component({
   selector: 'app-special',
   templateUrl: './special.component.html',
-  styleUrls: ['./special.component.scss']
+  styleUrls: ['./special.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class SpecialComponent implements OnInit {
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
+
 
   lastAssignedId: number = 0;
-  rows: Row[] = [this.createRowWithInput()]; // Initialize with a Row with an input
 
-  createRowWithInput(): Row {
+  rows: Row[] = [this.createRowWithInput(1)]; // Initialize with a Row with an input, starting index from 1
+
+
+
+  createRowWithInput(index: number): Row {
     const newRow = new Row();
     newRow.id = ++this.lastAssignedId;
     newRow.row = [];
-    newRow.insiderows = [this.createInsiderowsWithInput()]; // Add an Insiderows object with an input
+    newRow.insiderows = [this.createInsiderowsWithInput()];
+    newRow.index = index; // Set the index for the current row
     return newRow;
   }
 
@@ -38,14 +70,15 @@ export class SpecialComponent implements OnInit {
   }
 
   addNew() {
-    this.rows.push(this.createRowWithInput()); // Add a new Row with an input
+    this.rows.push(this.createRowWithInput(this.rows.length + 1)); // Add a new Row with an input, increment index by 1
   }
 
   addChildNew(parentRow: Row) {
+    const index = parentRow.row ? parentRow.row.length + 1 : 1; // Calculate index based on current row count
     if (!parentRow.row) {
-      parentRow.row = [this.createRowWithInput()];
+      parentRow.row = [this.createRowWithInput(index)];
     } else {
-      parentRow.row.push(this.createRowWithInput());
+      parentRow.row.push(this.createRowWithInput(index));
     }
   }
 
@@ -68,4 +101,14 @@ export class SpecialComponent implements OnInit {
   trackByIndex(index: number, item: any) {
     return index;
   }
+  deleteRow(parent:any,child:any){
+    console.log(parent,child)
+    console.log(this.rows[parent].insiderows![child] )
+    this.rows[parent].insiderows?.splice(child,1)
+  }
+ 
+  /////////////////////////
+
+  options = ['Contains', 'equal', 'is Null' , 'Not Null']
+  selectedOption:any
 }
