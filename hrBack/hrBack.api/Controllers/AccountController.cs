@@ -42,5 +42,21 @@ namespace hrBack.api.Controllers
             }
             return Ok(result);
         }
+        [HttpPost("addRole")]
+        public async Task<IActionResult> addRoleAsync([FromBody] AddRoleModel model)
+        {
+
+
+            var result = await _authService.AddRoleAsybc(model);
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
+
+
     }
 }

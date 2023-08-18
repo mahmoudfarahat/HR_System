@@ -8,5 +8,6 @@ namespace hrBack.api.Services
 
         Task<AuthModel> GetTokenAsync(TokenRequestModel model);
 
+        Task<string> AddRoleAsybc(AddRoleModel model);
     }
 }
